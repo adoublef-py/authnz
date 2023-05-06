@@ -14,7 +14,7 @@ A module called [testcontainers](https://github.com/testcontainers/testcontainer
 
 ```bash
 # run application using the local environment.
-$ python -m uvicorn app:local --port $"PORT"
+$ python -m uvicorn authnz.local:app --host $"HOST" --port "PORT"
 ```
 
 ## Remote application
