@@ -2,7 +2,7 @@
 
 This repository follows best practises when building an authentication service in the Python language.
 
-## How to run locally
+## Getting started
 
 The pre-requirements to setup this project locally:
 
@@ -24,10 +24,10 @@ There is also an optional frontend UI to interact with the service via the web. 
 $ pnpm run -C web
 ```
 
-## Remote application
+## Additional Notes
 
 There are few projects in which this service is being used listed below:
 
 |project|website|
 |:---|:---|
-|[adoublef/soundcloud](#)|tbc|
+|[adoublef/soundcloud](https://github.com/adoublef/soundcloud)|tbc|
