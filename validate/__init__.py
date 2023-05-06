@@ -42,7 +42,7 @@ def compare_password(password: str, hashed_password: bytes) -> bool:
     raised if the passwords do not match.
     """
     if checkpw(password.encode(), hashed_password) is False:
-        raise ValidationError("Passwords do not match")
+        raise ValidationError("There is match with hashed password")
     return True
 
 
@@ -54,7 +54,7 @@ def parse_email(email: str) -> bool:
         address = validate_email(email)
         # normalized form
     except EmailSyntaxError:
-        raise ValidationError("Email is not valid")
+        raise ValidationError("Is not a valid RFC 5322 email address")
     except Exception as e:
         raise e
     return address.normalized
