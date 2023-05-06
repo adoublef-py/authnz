@@ -1,6 +1,6 @@
 from pytest import mark, raises, fixture
 from contextlib import contextmanager, nullcontext as does_not_raise
-from uuid import UUID
+from uuid import UUID, uuid4
 from authnz import User, Credentials, parse_credentials
 from validate import ValidationError
 
@@ -40,3 +40,10 @@ def test_user_entity(valid_credentials: Credentials, username: str, bio: str | N
         user = User(username=username, bio=bio, credentials=valid_credentials)
         assert user is not None
         assert UUID(str(user.id)) is not None
+
+def test_user_equality(valid_credentials: Credentials):
+    id = uuid4()
+    user1 = User(id=id, username="foo")
+    user2 = User(id=id, username="bar", credentials=valid_credentials)
+    assert user1 == user2
+    assert user1 is not user2

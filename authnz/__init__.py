@@ -9,12 +9,12 @@ class User:
     """
     User represents the user entity within the domain.
     """
-    username: str # non-default arguments mustn't follow default arguments
-    bio: str | None = field(default=None) # is non-empty this must be validated
-    photo_url: str | None = field(default=None) # is non-empty this must be validated
-    credentials: Credentials | None = field(default=None) # unsure if I need to use the | operator here
+    username: str = field(compare=False) # non-default arguments mustn't follow default arguments
+    bio: str | None = field(default=None, compare=False) # is non-empty this must be validated
+    photo_url: str | None = field(default=None, compare=False) # is non-empty this must be validated
+    credentials: Credentials | None = field(default=None, compare=False) # unsure if I need to use the | operator here
     
-    id: UUID = field(default_factory=uuid4, compare=True, hash=True)
+    id: UUID = field(default_factory=uuid4)
 
     def __post_init__(self):
         if len(self.username) < 3 or len(self.username) > 20:
