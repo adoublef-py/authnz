@@ -17,6 +17,15 @@ A module called [testcontainers](https://github.com/testcontainers/testcontainer
 $ python -m uvicorn authnz.local:app --host $"HOST" --port "PORT"
 ```
 
+There is also an optional frontend UI to interact with the service via the web. This will require [Node](https://nodejs.org/en/download) to be installed on your device.
+
+```bash
+# cd into the directory
+$ cd
+# run the optional web UI
+$ cd
+```
+
 ## Remote application
 
 There are few projects in which this service is being used listed below:
